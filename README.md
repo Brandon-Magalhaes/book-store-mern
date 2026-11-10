@@ -48,11 +48,7 @@ npm install
 npm run dev               # http://localhost:5173
 ```
 
-Se o seu Node for 20.6 ou superior, pode usar o arquivo `.env` direto:
-
-```bash
-node --env-file=.env index.js
-```
+Os scripts `start` e `dev` carregam o `.env` automaticamente (recurso `--env-file` do Node), então é preciso **Node 20.6 ou superior**.
 
 ## Variáveis de ambiente
 
