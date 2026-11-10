@@ -1,7 +1,12 @@
-export const PORT = 5555;
+export const PORT = process.env.PORT || 5555;
 
-export const mongoDBURL =
-  "mongodb+srv://root:admin@cursonode.ghme0qm.mongodb.net/?retryWrites=true&w=majority&appName=CursoNode";
+const mongoDBURL = process.env.MONGODB_URI;
 
-// Please create a free database for yourself.
-// This database will be deleted after tutorial
+if (!mongoDBURL) {
+  throw new Error(
+    "Defina a variavel de ambiente MONGODB_URI antes de iniciar o servidor. " +
+      "Use o arquivo .env.example como modelo."
+  );
+}
+
+export { mongoDBURL };
